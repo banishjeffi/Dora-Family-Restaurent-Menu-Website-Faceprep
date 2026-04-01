@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    color: white;
+}
+
+
+p {
+    text-align: center;
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+li {
+    font-size: 16px;
+    line-height: 1.7;
+    word-spacing: 5px;
+}
+
+strong {
+    color: transparent;
+    background: linear-gradient(to bottom left, red, orange);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 50px;
+}
+
+.home header {
+    justify-content: space-evenly;
+    background: url(./assets/banner.png);
+    background-blend-mode: multiply;
+    background-color: #494848;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+}
+
+.brand-header-highlight {
+    color: yellow;
+}
+
+.scrollable-header nav .active {
+    color: yellow;
+    position: relative;
+}
+
+.scrollable-header nav .active::before {
+    content: "";
+    position: fixed;
+    width: 25px;
+    height: 3px;
+    color: yellow;
+}
+
+.scrollable-header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 8px 12px;
+    border-radius: 30px;
+}
+
+.scrollable-header nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.scrollable-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    height: 70px;
+    padding: 0 5%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.scrollable-navigation {
+    margin-top: 20px;
+    top: 20px;
+    position: sticky;
+}
+
+.scrollable-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.scrollable-header img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.cta {
+    display: flex;
+    gap: 20px;
+}
+
+.cta a {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+
+.cta-button-passive {
+    background: white;
+    color: black;
+}
+
+.cta-button-active {
+    background: transparent;
+    color: white;
+}
+
+.cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.home .cta .cta-button-active:hover {
+    background-color: white;
+    color: #000;
+    border: none;
+}
+
+.home .cta .cta-button-passive:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+main {
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+section {
+    margin: 20px 0px;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 35px;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    border-radius: 5px;
+    height: 4px;
+    background: linear-gradient(to top left, red, orange);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.food-menu-container {
+    display: flex;
+    gap: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+.food-menu-container .food {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.food-menu-container .food:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    border-color: rgba(255, 107, 107, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.food-menu-container .food img {
+    width: 150px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.food-menu-container .food:hover img {
+    transform: scale(1.05);
+}
+
+.food-menu-container .food figcaption {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.food-menu-container .food figcaption::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+    transition: width 0.3s ease;
+}
+
+.food-menu-container .food:hover figcaption::after {
+    width: 50px;
+}
+
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #ff6b6b;
+    padding: 30px;
+    border-radius: 0 15px 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    text-align: left;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    color: #e0e0e0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.user-info strong {
+    color: yellow;
+    font-size: 16px;
+}
+
+.user-info span {
+    font-size: 13px;
+    color: #888;
+    margin-top: 4px;
+}
+
+/*foods*/
+.food-page-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+}
+
+.food-page-filter {
+    width: 280px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 24px 20px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.food-page-filter>ol {
+    list-style: none;
+}
+
+.food-page-filter ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.food-page-filter ol li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 6px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.food-page-filter ol li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.food-page-filter ol li::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.food-page-card-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.food-card {
+    width: 260px;
+    height: 320px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.food-card:hover {
+    padding: 5px;
+    background: linear-gradient(360deg, red, orange);
+}
+
+.food-card-image {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    position: absolute;
+}
+
+.food-card-image:hover {
+    box-shadow: -1px -1px 15px rgb(30, 30, 30);
+}
+
+.food-name {
+    position: absolute;
+    z-index: 100;
+    border-radius: 0px 0px 10px 10px;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: #00000084;
+    backdrop-filter: blur(8px);
+}
+
+.fixed-center {
+    position: absolute;
+    top: 25%;
+    left: 38%;
+}
+
+.contact-page p {
+    max-width: 100%;
+    text-align: unset;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
